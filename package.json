@@ -1,0 +1,38 @@
+{
+  "name": "AUIC",
+  "description": "Angular (Advanced) UI Components",
+  "version": "1.0.0",
+  "author": {
+    "name": "D Balaji",
+    "email": "balaji@formobi.in"
+  },
+  "homepage": "https://www.formobi.in",
+  "dependencies": {
+  },
+  "bugs": {
+    "url": "https://github.com/formobi/auic/issues",
+    "email": "support@formobi.in"
+  },
+  "keywords": [
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/formobi/auic.git"
+  },
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  },
+  "optionalDependencies": {},
+  "scripts": {
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ng-annotate": "^3.0.0"
+  },
+  "copyright": "Copyright © 2015-2017 Formobi Solutions Private Ltd. All Rights Reserved."
+}
