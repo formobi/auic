@@ -1,0 +1,47 @@
+
+<div class="col-md-3">
+    <span class="input-group hackyhack">
+        <span class="input-group-addon">From</span>
+        <input type="text"
+            class="form-control"
+            datepicker-popup="dd-MMM-yyyy"
+            show-weeks=false
+            name="start_date"
+            ng-model="start_date"
+            min-date="min_date"
+            max-date="max_date"
+            is-open="date_pickers.start_date"
+            datepicker-options=""
+               readonly="readonly"
+            show-button-bar="false" /> 
+        <span class="input-group-btn">
+            <button class="btn btn-default"
+                    ng-click="openDatePicker($event, 'start_date')">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+    </span>
+</div>
+<div class="col-md-3">
+    <span class="input-group hackyhack">
+        <span class="input-group-addon">To</span>
+        <input type="text"
+            class="form-control"
+            datepicker-popup="dd-MMM-yyyy"
+            show-weeks=false
+            name="end_date"
+            ng-model="end_date"
+            min-date="min_date"
+            max-date="max_date"
+            is-open="date_pickers.end_date"
+            datepicker-options=""
+               readonly="readonly"
+            show-button-bar="false" /> 
+        <span class="input-group-btn">
+            <button class="btn btn-default"
+                    ng-click="openDatePicker($event, 'end_date')">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+    </span>
+</div>

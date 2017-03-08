@@ -1,0 +1,12 @@
+
+/** Below is hack for datepicker overflowing through right */
+
+.hackyhack {
+    position: relative;
+}
+.hackyhack .dropdown-menu {
+    left: auto !important;
+    right: 0px;
+}
+
+
