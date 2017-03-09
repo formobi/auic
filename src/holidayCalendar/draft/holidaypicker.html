@@ -1,0 +1,113 @@
+
+<div class="panel panel-default">
+    
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <div type="checkbox">Total Days</div>
+                    </span>
+                    <div type="text" class="form-control">
+                        <span ng-bind="num_days"></span>
+                    </div>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-4 -->
+            
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <div type="checkbox">Holidays</div>
+                    </span>
+                    <div type="text" class="form-control">
+                        <span ng-bind="num_holidays"></span>
+                    </div>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-4 -->
+            
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <div type="checkbox">Working Days</div>
+                    </span>
+                    <div type="text" class="form-control">
+                        <span ng-bind="num_working"></span>
+                    </div>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div> <!-- panel-body -->
+    
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="row" ng-show="editMode">
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="checkbox"
+                                       ng-model="sundays_holiday"
+                                       ng-change="markSundays()">
+                            </span>
+                            <div type="text" class="form-control">
+                                Mark Sundays
+                            </div>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox"
+                                     ng-model="saturdays_holiday"
+                                     ng-change="markSaturdays()">
+                            </span>
+                            <div type="text" class="form-control">
+                                Mark Saturdays
+                            </div>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-3 -->
+                </div><!-- /.row -->
+            </div>
+        </div>
+    </div>
+    
+	<div class="panel-body">
+        <div class="row">
+            <div class="col-lg-4 text-center" ng-repeat="month in months">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="text-uppercase" ng-bind="month.name"></span>
+                    </div>
+                    <div class="panel-body" style="padding: 0px;">
+				        <div class="table-responsive">
+                            <table class="table table-bordered table-hover"
+                                   style="margin-bottom: 0px;">
+                                <thead>
+                                    <tr>
+                                        <th>SUN</th>
+                                        <th>MON</th>
+                                        <th>TUE</th>
+                                        <th>WED</th>
+                                        <th>THU</th>
+                                        <th>FRI</th>
+                                        <th>SAT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="week in month.weeks">
+                                        <td ng-repeat="day in week"
+                                            ng-class="{'unused': (day.id===undefined), 'holiday': (day.holiday)}"
+                                            ng-click="markDay(day)">
+                                            <div>{{(day.id === undefined) ? '.' : day.dt}}
+                                            </div>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                            </table>
+				        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

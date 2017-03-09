@@ -1,0 +1,60 @@
+<div id="content-container"
+     ng-controller="HolidayCalendarCtrl"
+     ng-init="init();">
+    <div class="fm-card">
+        <h2 class="ar-page-heading">
+            <div class="row">
+                <div class="col-md-6">
+                    Holiday Calendar -
+                    <span class="dropdown" dropdown>
+                        <a href class="dropdown-toggle" dropdown-toggle>
+                            <span ng-bind="selected_year"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="year in YEARS">
+                                
+                                <a href ng-click="selectYear(year)">
+                                    <span ng-bind="year"
+                                          ng-style="year===CURRENT_YEAR?{'font-weight':'bold'}:{}">
+                                    </span>
+                                    <i class="fa fa-check" ng-if="year===selected_year"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="col-md-6 pull-right text-right">
+					<button type="button"
+                            class="btn btn-link"
+                            ng-click="cancel()"
+                            ng-show="edit_mode">
+                        CANCEL
+                    </button>
+					<button type="button"
+                            class="btn btn-primary"
+                            ng-click="save()"
+                            ng-show="edit_mode">
+                        SAVE
+                    </button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            ng-click="edit()"
+                            ng-hide="edit_mode">
+                        EDIT
+                    </button>
+                </div>
+            </div>
+        </h2>
+        <holiday-picker 
+            year="selected_year"
+            draft="input"
+            value="cal"
+            edit-mode="edit_mode">
+        </holiday-picker>
+    </div>
+
+</div>
+
+
+
+
